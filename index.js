@@ -1,13 +1,24 @@
-const express = require('express')
+const express = require('express');
+const dotenv = require('dotenv');
+const PORT = process.env.PORT || 5000
+
+const toursRoute = require("./routes/v1/tours.routes")
+
 const app = express()
-const port = 3000
+dotenv.config()
+app.use(express.json())
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
+// Database Connect
+require('./config/dbConnect')
+
+// Routes
+app.use("/api/v1", toursRoute)
+
+// Helath Check
+app.get("/", (req, res) => {
+    res.send("Hello World")
 })
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+app.listen(PORT, () => {
+    console.log(`Server is listing on PORT:${PORT}`);
 })
-
-module.exports = app
