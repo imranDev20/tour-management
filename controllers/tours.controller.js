@@ -38,7 +38,7 @@ exports.getTour = async (req, res) => {
     }
 }
 
-/* ----------------- Post A Tour ----------------- */
+// Post A Tour
 exports.postTour = async (req, res) => {
     const data = req.body
 
