@@ -59,7 +59,7 @@ exports.postTour = async (req, res) => {
 
 }
 
-/* ----------------- Update A Tour ----------------- */
+// Update A Tour
 exports.updateTour = async (req, res) => {
     const { id } = req.params
     const data = req.body
