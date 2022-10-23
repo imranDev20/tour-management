@@ -19,7 +19,7 @@ exports.getTours = async (req, res) => {
     }
 }
 
-/* ----------------- Get Single Tour ----------------- */
+// Get Single Tour
 exports.getTour = async (req, res) => {
     const { id } = req.params
 
