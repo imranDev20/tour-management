@@ -8,7 +8,7 @@ exports.getTours = async (req, res) => {
         const result = await service.getTours()
         res.status(200).json({
             status: 'Success',
-            message: "Tours Info Find Successfully!",
+            message: "Successfully found!",
             data: result
         })
     } catch (error) {
@@ -27,7 +27,7 @@ exports.getTour = async (req, res) => {
         const result = await service.getTour(id)
         res.status(200).json({
             status: 'Success',
-            message: "Tour Info Find Successfully!",
+            message: "Successfully found!",
             data: result
         })
     } catch (error) {
@@ -46,7 +46,7 @@ exports.postTour = async (req, res) => {
         const result = await service.postTour(data)
         res.status(201).json({
             status: 'Success',
-            message: "Tour Info added Successfully!",
+            message: "Added Successfully!",
             data: result
         })
 
@@ -67,7 +67,7 @@ exports.updateTour = async (req, res) => {
         const result = await service.updateTours({ id, data })
         res.status(201).json({
             status: 'Success',
-            message: "Tour Info updated Successfully!",
+            message: "Updated Successfully!",
             data: result
         })
     } catch (error) {
@@ -78,7 +78,7 @@ exports.updateTour = async (req, res) => {
     }
 }
 
-/* ----------------- Get Trending Tours ----------------- */
+// Trending tours
 exports.trendingTours = async (req, res) => {
     try {
         const result = await service.trendingTours()
@@ -95,7 +95,7 @@ exports.trendingTours = async (req, res) => {
     }
 }
 
-/* ----------------- Get Cheapest Tours ----------------- */
+// Get Cheapest Tours
 exports.chepestTours = async (req, res) => {
     try {
         const result = await service.chepestTours()
